@@ -1,0 +1,122 @@
+
+header {
+  width: 100%;
+  height: 100vh;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+}
+
+nav {
+  display: block;
+  width: 100%;
+  height: 3rem;
+  position: sticky;
+  top: 3%;
+  left: 0%;
+
+  transform-origin: left top;
+  animation-name: progress;
+  animation-timeline: scroll();
+  animation-fill-mode: both;
+  
+  background-color: oklch(80% 50% var(--hue));
+}
+
+section {
+  width: 70vw;
+  height: auto;
+  position: relative;
+  border: solid 3px pink;
+  border-radius: 5px; 
+  margin: 0 auto;
+  margin-bottom: 3rem;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+section ul {
+  display: flex;
+  width: 100%;
+  height: auto;
+  overflow-x: scroll;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
+  scroll-behavior: smooth;
+  overscroll-behavior: contain;
+}
+
+section ul:first-of-type li {
+  list-style-type: none;
+  flex: 0 0 100%;
+  
+  & a {
+    display: flex;
+    justify-content: center;
+    scroll-snap-align: center;
+  }
+  
+  & img {
+    display: block;
+    width: 50%;
+    height: auto;
+    object-fit: contain;
+  }
+}
+
+section ul:nth-of-type(2) {
+    display: flex;
+    justify-content: center;
+    gap: 0.25rem;
+    width: 100%;
+    height: .8em;
+    padding: 0;
+}
+
+section ul:nth-of-type(2) li {
+    display: flex;
+    width: .8em;
+    background-color: lightblue;
+    list-style-type: none;
+    border-radius: 100%;
+
+    & a {
+    width: 100%;
+    height: auto;
+  }
+
+}
+
+@property --hue {
+  syntax: "<angle>";
+  initial-value: 0turn;
+  inherits: false;
+}
+
+
+@keyframes progress {
+  0% {  
+   scale:0 1;
+    --hue: 0turn;
+  }
+  100% {
+    scale:1;
+    --hue: 1turn;
+  }
+}
+
+@keyframes colorized-dot {
+  to {
+    background-color: pink;
+  }
+}
+
+
+
+footer {
+  display: flex;
+  flex-direction: column
+}
