@@ -87,7 +87,6 @@ section ul:nth-of-type(2) li {
     width: 100%;
     height: auto;
   }
-
 }
 
 @property --hue {
@@ -95,7 +94,6 @@ section ul:nth-of-type(2) li {
   initial-value: 0turn;
   inherits: false;
 }
-
 
 @keyframes progress {
   0% {  
